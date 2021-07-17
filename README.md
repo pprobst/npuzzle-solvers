@@ -5,7 +5,7 @@ The heuristic used is the Manhattan distance, _without_ linear conflicts.
 
 The problem instances are located in the `npuzzle` directory. 
 
-## Implemented algorithms:
+## Implemented algorithms
 
 * Breadth-first search graph
 * Greedy best-first search
@@ -33,7 +33,7 @@ expanded nodes, solution length, search time (s), average heuristic value, initi
 724,23,0.000152,11.710304,15
 ```
 
-Each output corresponds to the ordering of the input instances.
+Each output line corresponds to an instance provided in the input, in order.
 
 The results can be optionally recorded in `csv` files by changing the value of
 variable `record` in `main.cc` from `false` to `true`.
