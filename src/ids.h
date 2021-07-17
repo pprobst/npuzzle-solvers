@@ -6,10 +6,10 @@
 
 // Iterative Deepening Search
 class IDS : public Search {
-    public:
+  public:
     IDS();
-	//optional<std::deque<Action>> DLS(Node& n, int depth_limit);
-	bool DLS(Node& n, int depth_limit);
+    // optional<std::deque<Action>> DLS(Node& n, int depth_limit);
+    bool DLS(Node &n, int depth_limit);
     std::optional<Solution> run(State state);
 };
 

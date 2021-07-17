@@ -5,14 +5,14 @@
 #include "state.h"
 
 class Heuristic {
-    public:
+  public:
     uint32_t called_count;
     uint32_t accumulator;
 
     Heuristic();
 
     // Manhattan distance
-    int calculate(const State& state);
+    int calculate(const State &state);
 };
 
 #endif

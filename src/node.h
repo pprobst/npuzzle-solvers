@@ -2,10 +2,10 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "state.h"
 #include "heuristic.h"
-#include <vector>
+#include "state.h"
 #include <memory>
+#include <vector>
 
 /**
  * Node
@@ -14,27 +14,27 @@
  * Includes state, parent node, action, path cost g, heuristic h.
  */
 
-
 class Node {
-    private:
+  private:
     static uint64_t node_counter;
 
-    public:
+  public:
     State state;
-    State* parent_state;
-	Action action;
+    State *parent_state;
+    Action action;
     std::size_t idx;
-	uint32_t cost; // g
-	int heuristic; // h
+    uint32_t cost; // g
+    int heuristic; // h
 
-	Node();
-	Node(State* parent_state, Action a, const State& s, uint32_t cost, Heuristic& h);
-	Node(State* parent_state, Action a, const State& s, uint32_t cost);
+    Node();
+    Node(State *parent_state, Action a, const State &s, uint32_t cost,
+         Heuristic &h);
+    Node(State *parent_state, Action a, const State &s, uint32_t cost);
 
-	void makeRootNode(const State& s, Heuristic& h);
-	void makeRootNode(const State& s);
+    void makeRootNode(const State &s, Heuristic &h);
+    void makeRootNode(const State &s);
 
-    inline Node& operator=(const Node &n) {
+    inline Node &operator=(const Node &n) {
         this->state = n.state;
         this->parent_state = n.parent_state;
         this->action = n.action;

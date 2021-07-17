@@ -5,9 +5,10 @@
 #include "search.h"
 
 class IDAStar : public Search {
-    public:
+  public:
     IDAStar(Heuristic h);
-    std::pair<std::optional<int>, std::optional<int>> RecursiveSearch(Node& node, int f_limit);
+    std::pair<std::optional<int>, std::optional<int>>
+    RecursiveSearch(Node &node, int f_limit);
     std::optional<Solution> run(State state);
 };
 

@@ -5,10 +5,9 @@
 #include "search.h"
 
 class AStar : public Search {
-    public:
+  public:
     AStar(Heuristic h);
-    std::optional<Solution>
-    run(State state);
+    std::optional<Solution> run(State state);
 };
 
 #endif

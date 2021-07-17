@@ -5,7 +5,7 @@
 #include "search.h"
 
 class BFSGraph : public Search {
-    public:
+  public:
     BFSGraph();
     std::optional<Solution> run(State state);
 };

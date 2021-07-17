@@ -5,7 +5,7 @@
 #include "search.h"
 
 class GBFS : public Search {
-    public:
+  public:
     GBFS(Heuristic h);
     std::optional<Solution> run(State state);
 };

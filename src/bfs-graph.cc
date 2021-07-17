@@ -6,18 +6,18 @@ using namespace std;
 
 BFSGraph::BFSGraph() {}
 
-/* 
+/*
  * Breadth-First Search Graph (duplicate elim).
- * 
+ *
  * While the open set (deque, a double-ended queue) is not empty, expand a node.
- * Then generate the successors for the current node; if one of 
+ * Then generate the successors for the current node; if one of
  * successor states is the goal, end the search; else, if the state
- * is not in the closed set, add the state to it and the newly 
+ * is not in the closed set, add the state to it and the newly
  * generated node to the end of the deque.
  * The deque is efficient for insertion/deletion at the end/begin.
  *
- * The closed list remembers expanded states to avoid duplicated expansions of the same state.
- * The open list (frontier) determines the next node to expand.
+ * The closed list remembers expanded states to avoid duplicated expansions of
+ * the same state. The open list (frontier) determines the next node to expand.
  */
 optional<Search::Solution> BFSGraph::run(State initial_state) {
     this->start_clock = chrono::steady_clock::now();
@@ -39,7 +39,7 @@ optional<Search::Solution> BFSGraph::run(State initial_state) {
         open.pop_front();
 
         this->expanded_node_count++;
-        for (State& s_ : n.state.succ()) {
+        for (State &s_ : n.state.succ()) {
             Node n_ = Node(&n.state, s_.action, s_, n.cost);
             if (s_.isGoal()) {
                 this->end_clock = chrono::steady_clock::now();
